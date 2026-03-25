@@ -1,0 +1,94 @@
+{
+  "name": "CopyrightAlert",
+  "type": "object",
+  "properties": {
+    "work_id": {
+      "type": "string",
+      "description": "ID of the protected work"
+    },
+    "work_title": {
+      "type": "string",
+      "description": "Title of the original work"
+    },
+    "alert_type": {
+      "type": "string",
+      "enum": [
+        "duplicate_found",
+        "similar_content",
+        "unauthorized_use",
+        "trademark_violation"
+      ],
+      "description": "Type of copyright alert"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "description": "Severity of the infringement"
+    },
+    "infringer_name": {
+      "type": "string",
+      "description": "Name of the person/entity who used the content"
+    },
+    "infringer_email": {
+      "type": "string",
+      "description": "Email of the person who uploaded the conflicting content"
+    },
+    "infringer_location": {
+      "type": "string",
+      "description": "Location where infringement was detected"
+    },
+    "detected_platform": {
+      "type": "string",
+      "description": "Platform where infringement was found"
+    },
+    "similarity_score": {
+      "type": "number",
+      "description": "Similarity percentage"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "reviewed",
+        "action_taken",
+        "resolved",
+        "dismissed"
+      ],
+      "default": "new",
+      "description": "Alert status"
+    },
+    "details": {
+      "type": "string",
+      "description": "Detailed description of the infringement"
+    },
+    "detected_url": {
+      "type": "string",
+      "description": "URL where the infringement was detected"
+    },
+    "detection_time": {
+      "type": "string",
+      "description": "When the infringement was detected"
+    },
+    "alert_recipient": {
+      "type": "string",
+      "enum": [
+        "uploader",
+        "owner"
+      ],
+      "description": "Whether this alert is for the uploader (conflict warning) or the original owner (infringement notice)"
+    },
+    "original_work_title": {
+      "type": "string",
+      "description": "Title of the original registered work this conflicts with"
+    }
+  },
+  "required": [
+    "work_title",
+    "alert_type"
+  ]
+}

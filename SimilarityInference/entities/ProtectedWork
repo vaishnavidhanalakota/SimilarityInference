@@ -1,0 +1,73 @@
+{
+  "name": "ProtectedWork",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title of the work"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the work"
+    },
+    "work_type": {
+      "type": "string",
+      "enum": [
+        "image",
+        "video",
+        "music",
+        "logo",
+        "trademark",
+        "text",
+        "photograph",
+        "ai_generated",
+        "song",
+        "other"
+      ],
+      "description": "Type of content"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "URL of the uploaded file"
+    },
+    "thumbnail_url": {
+      "type": "string",
+      "description": "Thumbnail URL for display"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "scanning",
+        "registered",
+        "conflict_found",
+        "rejected"
+      ],
+      "default": "scanning",
+      "description": "Registration status"
+    },
+    "similarity_score": {
+      "type": "number",
+      "description": "Highest similarity score found during scan (0-100)"
+    },
+    "similar_to": {
+      "type": "string",
+      "description": "Name/description of similar existing work if found"
+    },
+    "registration_id": {
+      "type": "string",
+      "description": "Unique registration ID for the protected work"
+    },
+    "tags": {
+      "type": "string",
+      "description": "Comma-separated tags for the work"
+    },
+    "owner_name": {
+      "type": "string",
+      "description": "Name of the content owner"
+    }
+  },
+  "required": [
+    "title",
+    "work_type"
+  ]
+}
